@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 10px 0;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  opacity: 0.9;
+  transition: 0.5s;
+}
+
+.navbar.top {
+  background: transparent;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul a {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar ul a:hover {
+  border-bottom: 2px solid #28a745;
+}
+
+/* Content */
+.hero {
+  background: url("../images/showcase.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+.hero .content {
+  /* height for the content to be in center */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  /* padding for small screens */
+  padding: 0 20px;
+}
+
+.hero .content h1 {
+  font-size: 55px;
+}
+
+.hero .content p {
+  font-size: 23px;
+  /* p will not extend beyond 600px */
+  max-width: 600px;
+  /* 20: top, 0: left and right, 30: bottom */
+  margin: 20px 0 30px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero * {
+  z-index: 10;
+}
+
+/* blog page*/
+.hero.blog {
+  background: url("../images/home/blog.jpg") no-repeat center center/cover;
+  height: 30vh;
+}
+
+/* Icons */
+
+.icons {
+  padding: 30px;
+}
+
+.icons h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.icons i {
+  background-color: #28a745;
+  color: #fff;
+  /* make the background circle bigger */
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* cases */
+.cases img:hover {
+  opacity: 0.7;
+}
+
+/* team */
+.team img {
+  border-radius: 50%;
+}
+
+/* Callback-form */
+.callback-form {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.callback-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.callback-form .form-control {
+  margin-bottom: 15px;
+}
+
+.callback-form input {
+  width: 100%;
+  padding: 4px;
+  height: 40px;
+  border: #f5f5f5 1px solid;
+}
+
+.callback-form input:focus {
+  outline-color: #28a745;
+}
+
+.callback-form .btn {
+  padding: 12px 0;
+  margin-top: 15px;
+}
+
+/* post */
+.post {
+  padding: 50px 30px;
+}
+
+.post h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.post .meta {
+  margin-bottom: 30px;
+}
+
+.post img {
+  width: 300px;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+}
+/* footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 200px;
+}
+
+footer a {
+  color: #fff;
+  margin: 15px;
+}
+
+footer a:hover {
+  color: #28a745;
+}
+
+/* Media Queries */
+
+/* mobile */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+  #navbar a {
+    padding: 10px;
+    margin: 0 3px;
+  }
+  .hero.blog .content {
+    justify-content: center;
+    text-align: center;
+  }
+  .hero.blog .content h1 {
+    font-size: 3rem;
+    margin-top: 6rem;
+  }
+  .flex-items {
+    flex-direction: column;
+  }
+
+  /* if we do like this then ther will be small space between col-1 and col-2 */
+  /* .flex-columns .row {
+    flex-direction: column;
+  } */
+
+  /* this will expand both the columns 100% */
+  .flex-columns .column,
+  .flex-grid .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .team img {
+    width: 70%;
+  }
+  @media (max-width: 500px) {
+    .hero.blog .content {
+      justify-content: center;
+      text-align: center;
+    }
+    .hero.blog .content h1 {
+      font-size: 2rem;
+      margin-top: 6rem;
+    }
+    .footer {
+      height: 125px;
+    }
+  }
+}
